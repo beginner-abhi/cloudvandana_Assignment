@@ -1,0 +1,22 @@
+
+
+#2nd question Answer --->
+//Perform sorting of an array in descending order.
+
+const array1 = [20.3,23.7,10.2,94.5]; 
+const array2 = [54,33,1,57,200]; 
+
+function arraySort(array) { 
+
+//sort() method used for sort the elements
+	array.sort((a,b)=>a-b); 
+//reverse() method used for reverse the elements
+	array.reverse(); 
+	return array; 
+} 
+console.log(arraySort(array1)); 
+console.log(arraySort(array2));
+
+/* Output:
+[ 94.5, 23.7, 20.3, 10.2 ]
+[ 200, 57, 54, 33, 1 ] */
