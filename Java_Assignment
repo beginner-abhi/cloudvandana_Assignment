@@ -1,0 +1,150 @@
+#Answer of 1st question --->
+#Create an array with the values (1, 2, 3, 4, 5, 6, 7) and shuffle it.
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class ShuffleArrVal {
+	public static void main(String[] args) {
+		
+		int[] array = { 1, 2, 3, 4, 5, 6, 7 };
+		int n=array.length;
+
+		// Random class is used to generate random numbers.
+		Random rand = new Random();
+		
+		for (int i = 0; i < n; i++) {
+
+     //nextInt() method scans the next token of the input data as an “int”.
+			int Swap = rand.nextInt(n);
+			int temp = array[Swap];
+			array[Swap] = array[i];
+			array[i] = temp;
+		}
+//toString method is used to return a string representation of an object.
+		System.out.println(Arrays.toString(array));
+	}
+}
+
+//output : [7, 4, 3, 2, 5, 6, 1]
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Answer of 2nd question --->
+#Enter a Roman Number as input and convert it to an integer. (Example: IX = 9)
+
+public class RomanToInt1  
+	{   
+	  int value(char A)   
+	  {   
+	    if (A == 'I')   
+	      return 1;   
+	    if (A== 'V')   
+	      return 5;   
+	    if (A == 'X')   
+	      return 10;   
+	    if (A == 'L')   
+	      return 50;   
+	    if (A == 'C')   
+	      return 100;   
+	    if (A == 'D')   
+	      return 500;   
+	    if (A == 'M')   
+	      return 1000;   
+	    return -1;   
+	  }   
+	//function to convert roman to integer  
+	  int convertRomanToInt(String s)   
+	  {   
+	//Creat variable to store the sum  
+	    int All = 0;   
+	//loop iterate over the string (given roman numeral)  
+	//getting value from symbol s1[i]  
+	    for (int i=0; i<s.length(); i++)   
+	    {   
+	      int str1 = value(s.charAt(i));   
+	//getting value of symbol s2[i+1]  
+	      if (i+1 <s.length())   
+	      {   
+	        int str2 = value(s.charAt(i+1));   
+	//comparing the current character from its right character   
+	        if (str1 >= str2)   
+	        {   
+	//if the value of current character is greater or equal to the next symbol  
+	        	All = All + str1;   
+	        }   
+	        else  
+	        {   
+	//if the value of the current character is less than the next symbol  
+	        	All = All - str1;   
+	        }   
+	      }   
+	      else  
+	      {   
+	    	  All = All + str1;   
+	      }   
+	    }   
+	//returns corresponding integer value  
+	    return All;   
+	  }   
+	  //driver code  
+	  public static void main(String args[])   
+	  {   
+	    RomanToInteger1 ob = new RomanToInteger1();  
+	    String romanStr= "DXLMC";   
+	    System.out.println("The corresponding Integer value is: "+ob.convertRomanToInt(romanStr));   
+	  }   
+	}  
+
+//"Output: The corresponding Integer value is: 1540"
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#Answer of 3rd question --->
+#Check if the input is pangram or not. (A pangram is a sentence that contains all the alphabets from A to Z)
+
+
+
+public class Pangram {
+	
+		public static void main(String[] args) {
+		String s = "The quick brown fox jumps over the lazy dog"; 
+		
+		//Create a hash table to mark the characters present in the string By default all the elements of mark would be false.
+		boolean[] val = new boolean[26]; 
+		int index = 0;
+		int flag = 1;
+		
+		 // Traverse all characters
+		for (int i = 0; i < s.length(); i++) {
+			
+			 // If uppercase character, subtract 'A' to find index.
+		if ( s.charAt(i) >= 'A' && s.charAt(i) <= 'Z') {
+		index = s.charAt(i) - 'A'; 
+		
+		  // If lowercase character, subtract 'a' to find index.
+		}else if( s.charAt(i) >= 'a' &&  s.charAt(i) <= 'z') {
+		index = s.charAt(i) - 'a'; 
+		}
+		
+		// If this character is other than english lowercase and uppercase characters.
+		val[index] = true; 
+		}
+		
+
+        // Return false if any character is unmarked
+		for (int i = 0; i <= 25; i++) {
+		if (val[i] == false)
+		flag = 0;
+		}
+		if (flag == 1)
+		System.out.print("The String is a Pangram String.");
+		else
+		System.out.print("The String is not a Pangram String.");
+		}
+		}
+
+//"output : The String is a Pangram String"
