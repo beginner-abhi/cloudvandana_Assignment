@@ -1,5 +1,54 @@
+#1st question Answer --->
+ // Take a sentence as an input and reverse every word in that sentence. 
+// Example - This is a sunny day > shiT si a ynnus yad.
 
 
+function reverseWords(sentence) {
+    // Convert the sentence to an array of characters
+    const charac = sentence.split('');
+  
+    // to reverse a portion of the character array between two indices
+    function reverseChars(first, last) {
+      while (first < last) {
+        // Swap characters at the start and end pointers
+        [charac[first], charac[last]] = [charac[last], charac[first]];
+        first++;
+        last--;
+      }
+    }
+  
+    // Initialize two pointers
+    let first = 0;
+    let last = 0;
+  
+    while (last < charac.length) {
+      // Move the end pointer until a space or the end of the array is encountered
+      while (last < charac.length && charac[last] !== ' ') {
+        last++;
+      }
+  
+      // Reverse the word between the start and end pointers
+      reverseChars(first, last - 1);
+  
+      // Move the pointers to the next word
+      first = last + 1;
+      last = first;
+    }
+  
+    // Convert the character array back to a string
+    const reversedSentence = charac.join('');
+  
+    return reversedSentence;
+  }
+  
+  // Example usage
+  const inputSentence = "This is a sunny day";
+  const reversedSentence = reverseWords(inputSentence);
+  console.log(reversedSentence);
+// Output: "sihT si a ynnus yad"
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #2nd question Answer --->
 //Perform sorting of an array in descending order.
 
