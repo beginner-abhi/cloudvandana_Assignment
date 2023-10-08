@@ -52,20 +52,9 @@ function reverseWords(sentence) {
 #2nd question Answer --->
 //Perform sorting of an array in descending order.
 
-const array1 = [20.3,23.7,10.2,94.5]; 
-const array2 = [54,33,1,57,200]; 
+const elements = [9, 7, 1, 8, 3, 6];
 
-function arraySort(array) { 
+// Sorting in descending order
+elements.sort((a, b) => b - a);
 
-//sort() method used for sort the elements
-	array.sort((a,b)=>a-b); 
-//reverse() method used for reverse the elements
-	array.reverse(); 
-	return array; 
-} 
-console.log(arraySort(array1)); 
-console.log(arraySort(array2));
-
-/* Output:
-[ 94.5, 23.7, 20.3, 10.2 ]
-[ 200, 57, 54, 33, 1 ] */
+console.log(elements); // Output: [9, 8, 7, 6, 3, 1]
