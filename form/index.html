@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Survey Form</h1>
+        <form id="surveyForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option selected disabled>--Select Country--</option>
+   
+        <option>India</option>
+        <option>Pakistan</option>
+        <option>Afganistan</option>
+        <option>China</option>
+   
+   
+        <option>USA</option>
+        <option>NewYork</option>
+        <option>Andman Nikobar</option>
+        <option>Russia</option>
+    
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" id="male"> 
+    <label for="male">Male</label>
+    
+    <input type="radio" name="gender" id="female"> 
+    <label for="female">Female</label>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <br>
+            <div>
+                <label>Is this first time You are using our products & services?</label>
+                <input type="radio" name="question" id="Yes"> 
+    <label for="Yes">Yes</label>
+    <input type="radio" name="question" id="No"> 
+    <label for="no">No</label>
+            </div>
+            <br>
+            <div>
+                <label>Would you suggestion to your friend and collegue?</label>
+                <input type="radio" name="question" id="Yes"> 
+    <label for="Yes">Yes</label>
+    <input type="radio" name="question" id="No"> 
+    <label for="no">No</label> 
+            </div>
+            <br>
+            <div>
+                <label>How satisfied are you with our company overall?</label>
+                <input type="radio" name="question" id="satisfied"> 
+    <label for="satisfied">Satisfied</label>
+    <input type="radio" name="question" id="undecided"> 
+    <label for="undecided">Undecided</label>
+    <input type="radio" name="question" id="unsatisfied"> 
+    <label for="unsatisfied">Unsatisfied</label>
+            </div>
+            <br>
+            <div>
+                <tr>
+                    <td>
+                        <label>Do you have suggestion to improve our services?</label>
+                    </td>
+                    <td>
+                        <textarea rows="4" cols="60"></textarea>
+                    </td>
+                </tr>
+            </div>
+            <br>
+            <div class="form-buttons">
+                <button type="submit" id="submitBtn">Submit</button>
+                <button type="reset" id="resetBtn">Reset</button>
+            </div>
+        </form>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Your Survey Data</h2>
+            <ul id="popupData"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
